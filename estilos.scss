@@ -1,0 +1,264 @@
+@import "variables";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    
+
+    background-image: url(./img/backgroundbody.avif);
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;/*negrita*/
+
+}
+
+/*Para maracar los contenedores*/
+
+
+.container{
+
+    background:map-get($map_colores, $background-contenedor );
+    padding:20px; /*padding-container*/
+    border: map-get($map_colores , $border-contenedor );
+}
+
+.header, .content, .contentClientes,.sidebar,.footer, .related-post{
+
+    @extend .container;
+}
+
+/*Organizar el contenido*/
+
+
+.container{
+
+            width: 90%;
+            max-width: 10000px;
+            margin: 1.6em auto;
+
+            display: grid;
+            gap: 1.6em;
+            grid-template-columns: repeat(5, 1fr);
+
+    
+
+            /*Header*/
+            .header{
+
+                grid-column: 1/6 ;             
+                background-image: url(./img/65793-pizza.avif);
+                background-color: map-get($map_colores , $background-color-header ); /*$background-color-header*/
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                border: map-get($map_colores , $border-header ); /*$border-header*/
+                color:map-get($map_colores, $color-header ); /*$color-header*/
+                font-size: 30px;
+                padding:2rem; 
+            }
+            /*Fin Header*/
+            
+            
+
+
+    
+            /*Content*/
+            .content{
+
+                grid-column: span 3; /*Se indica que abarca 3 columnas*/
+                background-color:map-get($map_colores , $background-contenedor ); /*background-color-content*/
+
+                .article{
+
+                    background: map-get($map_colores , $background-article ); /*background-article*/
+                    padding:20px;
+                    margin-top: 5px;
+                    color: map-get($map_colores , $color-article ); /*color-article*/
+                    h1, p{
+                        padding:10px;
+                    }
+                
+                }
+
+            }
+
+            /*Fin content*/
+
+            
+            /*Sidebar*/
+            .sidebar{
+                grid-column: span 2;
+                background: map-get($map_colores , $background-sidebar );  /*background-sidebar*/
+                color:map-get($map_colores , $color-sidebar); /*color-sidebar*/
+
+                @include propiedadesFlex;
+                flex-direction: column;
+
+                img{
+                    width: 100%;
+                    margin-top: 5px;
+                }
+                    
+            } 
+            /*Fin Sidebar*/
+
+            /*Related-post*/
+            .related-post{
+                background: map-get($map_colores, $background-related); /*background-related*/
+                color:map-get($map_colores , $color-related ); /*color-related*/
+                height: 180px;
+                @include propiedadesFlex;
+                transition: all 0.5s ease; /*se complementa con hover*/
+                    
+                &hover{
+                    cursor: pointer;
+                    color: map-get($map_colores , $color-hover ); /*color-hover*/
+                    background: map-get($map_colores , $background-hover ); /*background-hover*/
+                }
+            }
+            .footer{
+                grid-column: 1/6 ; /*Para que el header y footer abarquen las 6 columnas*/
+                background: map-get($map_colores , $background-footer );
+                color: map-get($map_colores , $color-footer ); /*color footer*/
+                text-align: center;
+
+                .footer__flex{
+                    display: flex;
+                    justify-content: space-around;
+                    
+                    .footer__menu{
+                    
+                        list-style: none;
+                        text-align: center;
+                    
+                        a{
+                            color: map-get($map_colores , $color-a ); 
+                            text-decoration: none;
+                        }
+                    
+                    
+                    }
+                }
+                
+            }
+            /* Fin Related-post*/
+
+            /*ContentClientes*/
+            .contentClientes{
+
+                grid-column: 2/5; /*Se indica que abarca 3 columnas*/
+                background-color: map-get($map_colores , $back-color-cont-clientes); /*background-color-cont-clientes*/
+
+                .article{
+
+                    background: map-get($map_colores , $background-article ); /*$background-article*/
+                    padding:20px;
+                    margin-top: 5px;
+                    color: map-get($map_colores, $color-article ); /*$color-article*/
+                    h1, p{
+                        padding:10px;
+                    }
+                
+                }
+
+            }
+
+            /*Fin contentClientes*/
+                
+
+/*Fin container*/
+}
+
+/*Fomrmulario*/
+form{
+
+    width: 450px;
+    margin: auto;
+    background: map-get($map_colores , $background-form ); /*background-form*/
+    padding:10px 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 7px;
+    grid-column: 2/5;
+}
+
+h2{
+    color:map-get($map_colores , $color-h2 ); /*color-h2*/
+    text-align: center;
+    margin: 0;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+input, textarea{
+
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 17px;
+    border: map-get($map_colores , $border-input-textarea ); /*$border-input-textarea*/
+}
+
+textarea{
+    min-height: 100px;
+    min-width: 200px;
+    max-width: 100%;
+
+}
+
+#boton{
+    background: map-get($map_colores , $background-boton ); /*background-boton*/
+    color:map-get($map_colores , $color-boton ); /*color-boton*/
+    padding: 20px;
+    
+    &hover{
+        cursor:pointer;
+        
+    }
+}
+
+/*Para celular*/
+
+@media(max-width:768px ){
+
+    .container{
+
+        .header{
+            text-align: center;
+        }
+
+        .content{
+
+            grid-column: 1/-1; /*Para que abarque todo el ancho*/
+        }
+
+        .sidebar{
+
+            grid-column: 1/-1; /*Para que abarque desde el inicio hasta el fin*/
+        }
+
+        .related-post{
+
+            grid-column: 1/-1; 
+        }
+
+        .contentClientes{
+
+            grid-column: 1/-1; /*Para que abarque todo el ancho*/
+        }
+    
+    }
+
+    /*Para formulario*/
+
+    form{
+        width: 120%;
+    }
+    
+}

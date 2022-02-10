@@ -1,0 +1,279 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url(./img/backgroundbody.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 800;
+  /*negrita*/
+}
+
+/*Para maracar los contenedores*/
+.container > .header,
+.container > .content,
+.container > .contentClientes,
+.container > .sidebar,
+.container > .footer,
+.container > .related-post,
+.container > .div {
+  background: map;
+  /*$background-contenedor*/
+  padding: 20px;
+  /*padding-container*/
+  border: 1px solid black;
+  /*$border-contenedor*/
+}
+
+/*Organizar el contenido*/
+.container {
+  width: 90%;
+  max-width: 10000px;
+  margin: 1.6em auto;
+  display: -ms-grid;
+  display: grid;
+  gap: 1.6em;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  /*Header*/
+  /*Fin Header*/
+  /*Content*/
+  /*Fin content*/
+  /*Sidebar*/
+  /*Fin Sidebar*/
+  /*Related-post*/
+  /* Fin Related-post*/
+  /*ContentClientes*/
+  /*Fin contentClientes*/
+  /*Fin container*/
+}
+
+.container .header {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-column: 1/6;
+  background-image: url(./img/65793-pizza.jpg);
+  background-color: brown;
+  /*$background-color-header*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: red solid;
+  /*$border-header*/
+  color: #0f3d19;
+  /*$color-header*/
+  font-size: 30px;
+  padding: 2rem;
+}
+
+.container .content {
+  grid-column: span 3;
+  /*Se indica que abarca 3 columnas*/
+  background-color: #e06b6b;
+  /*background-color-content*/
+}
+
+.container .content .article {
+  background: #808390;
+  /*background-article*/
+  padding: 20px;
+  margin-top: 5px;
+  color: #dfe6e9;
+  /*color-article*/
+}
+
+.container .content .article h1, .container .content .article p {
+  padding: 10px;
+}
+
+.container .sidebar {
+  grid-column: span 2;
+  background: #485460;
+  /*background-sidebar*/
+  color: #fff;
+  /*color-sidebar*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /*Uso flexbox para centrar los elementos*/
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .sidebar img {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.container .related-post {
+  background: #2d3436;
+  /*background-related*/
+  color: #fff;
+  /*color-related*/
+  height: 180px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  /*se complementa con hover*/
+}
+
+.container .related-posthover {
+  cursor: pointer;
+  color: #000000;
+  /*color-hover*/
+  background: #ffffff;
+  /*background-hover*/
+}
+
+.container .footer {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-column: 1/6;
+  /*Para que el header y footer abarquen las 6 columnas*/
+  background: #26268b;
+  color: #fff;
+  /*color footer*/
+  text-align: center;
+}
+
+.container .footer .footer__flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.container .footer .footer__flex .footer__menu {
+  list-style: none;
+  text-align: center;
+}
+
+.container .footer .footer__flex .footer__menu a {
+  color: white;
+  /*$color-a*/
+  text-decoration: none;
+}
+
+.container .contentClientes {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-column: 2/5;
+  /*Se indica que abarca 3 columnas*/
+  background-color: #e06b6b;
+  /*background-color-cont-clientes*/
+}
+
+.container .contentClientes .article {
+  background: #808390;
+  /*$background-article*/
+  padding: 20px;
+  margin-top: 5px;
+  color: #dfe6e9;
+  /*$color-article*/
+}
+
+.container .contentClientes .article h1, .container .contentClientes .article p {
+  padding: 10px;
+}
+
+/*Fomrmulario*/
+form {
+  width: 450px;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.4);
+  /*background-form*/
+  padding: 10px 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 20px;
+  border-radius: 7px;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-column: 2/5;
+}
+
+h2 {
+  color: #fff;
+  /*color-h2*/
+  text-align: center;
+  margin: 0;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+input, textarea {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 7px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 17px;
+  border: none;
+  /*$border-input-textarea*/
+}
+
+textarea {
+  min-height: 100px;
+  min-width: 200px;
+  max-width: 100%;
+}
+
+#boton {
+  background: #31384a;
+  /*background-boton*/
+  color: #fff;
+  /*color-boton*/
+  padding: 20px;
+}
+
+#botonhover {
+  cursor: pointer;
+}
+
+/*Para celular*/
+@media (max-width: 768px) {
+  .container .header {
+    text-align: center;
+  }
+  .container .content {
+    grid-column: 1/-1;
+    /*Para que abarque todo el ancho*/
+  }
+  .container .sidebar {
+    grid-column: 1/-1;
+    /*Para que abarque desde el inicio hasta el fin*/
+  }
+  .container .related-post {
+    grid-column: 1/-1;
+  }
+  .container .contentClientes {
+    grid-column: 1/-1;
+    /*Para que abarque todo el ancho*/
+  }
+  /*Para formulario*/
+  form {
+    width: 120%;
+  }
+}
+/*# sourceMappingURL=estilos.css.map */

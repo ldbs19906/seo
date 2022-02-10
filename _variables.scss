@@ -1,0 +1,51 @@
+$map_colores:(
+
+    
+    background-color-header:brown,
+    background-color-content: rgb(224, 107, 107),
+    back-color-cont-clientes: rgb(224, 107, 107),
+    background-contenedor: rgb(94, 13, 13),
+    background-article: #808390,
+    background-sidebar: #485460,
+    background-related: #2d3436,
+    background-hover: #ffffff,
+    background-footer: rgb(38, 38, 139),
+    background-form: rgba(0,0,0,0.4),
+    background-boton: #31384a,
+    color-header:rgb(15, 61, 25),
+    color-article: #dfe6e9,
+    color-sidebar:#fff,
+    color-related:#fff,
+    color-hover: #000000,
+    color-footer: #fff,
+    color-a:white,
+    color-h2:#fff,
+    color-boton:#fff,
+    border-contenedor:1px solid black,
+    border-header: red solid,
+    border-input-textarea: none,
+
+);
+
+
+$puntos-de-quiebre:(
+    celular: 768px,
+    tablet: 992px,
+    computadora: 1200px
+);
+
+$tam-fuente:(
+    fuente-chica:17px,
+    fuente-grande:30px 
+);
+
+@mixin propiedadesFlex{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
